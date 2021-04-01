@@ -12,12 +12,15 @@
 #include <QtCharts/QChartView>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QDateEdit>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -28,199 +31,160 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_7;
-    QSpacerItem *verticalSpacer_7;
-    QLabel *label;
-    QSpacerItem *verticalSpacer;
+    QVBoxLayout *verticalLayout_6;
+    QLineEdit *lineEdit;
+    QGroupBox *groupBox_3;
     QHBoxLayout *horizontalLayout_14;
-    QSpacerItem *horizontalSpacer_7;
-    QCheckBox *checkBox_2;
-    QSpacerItem *horizontalSpacer_4;
+    QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout_15;
+    QDateEdit *dateEdit;
+    QDateEdit *dateEdit_2;
+    QGroupBox *groupBox_2;
+    QGridLayout *gridLayout_3;
     QCheckBox *checkBox_3;
-    QSpacerItem *horizontalSpacer_3;
-    QCheckBox *checkBox_4;
-    QSpacerItem *horizontalSpacer_17;
+    QCheckBox *checkBox_1;
+    QCheckBox *checkBox_2;
     QCheckBox *checkBox_5;
-    QSpacerItem *horizontalSpacer_18;
-    QCheckBox *checkBox_11;
-    QSpacerItem *horizontalSpacer_19;
-    QSpacerItem *verticalSpacer_5;
-    QCalendarWidget *calendarWidget;
-    QSpacerItem *verticalSpacer_2;
+    QCheckBox *checkBox_4;
+    QPushButton *pushButton;
     QLabel *label_3;
     QHBoxLayout *horizontalLayout_13;
-    QSpacerItem *horizontalSpacer_5;
     QtCharts::QChartView *graphicsView;
-    QSpacerItem *horizontalSpacer_2;
     QtCharts::QChartView *graphicsView_3;
-    QSpacerItem *horizontalSpacer;
     QtCharts::QChartView *graphicsView_2;
-    QSpacerItem *horizontalSpacer_6;
-    QSpacerItem *verticalSpacer_6;
-    QVBoxLayout *verticalLayout_6;
     QLabel *label_2;
-    QSpacerItem *verticalSpacer_9;
-    QtCharts::QChartView *graphicsView_7;
-    QSpacerItem *verticalSpacer_8;
+    QtCharts::QChartView *graphicsView_pret;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_retour;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(802, 822);
+        MainWindow->resize(868, 757);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setAutoFillBackground(false);
-        verticalLayout_7 = new QVBoxLayout(centralwidget);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
-        verticalSpacer_7 = new QSpacerItem(20, 2, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalLayout_6 = new QVBoxLayout(centralwidget);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setEnabled(false);
+        lineEdit->setInputMethodHints(Qt::ImhNone);
 
-        verticalLayout_7->addItem(verticalSpacer_7);
+        verticalLayout_6->addWidget(lineEdit);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        verticalLayout_7->addWidget(label);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer);
-
-        horizontalLayout_14 = new QHBoxLayout();
+        groupBox_3 = new QGroupBox(centralwidget);
+        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        horizontalLayout_14 = new QHBoxLayout(groupBox_3);
         horizontalLayout_14->setObjectName(QString::fromUtf8("horizontalLayout_14"));
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        groupBox = new QGroupBox(groupBox_3);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        horizontalLayout_15 = new QHBoxLayout(groupBox);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        dateEdit = new QDateEdit(groupBox);
+        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
 
-        horizontalLayout_14->addItem(horizontalSpacer_7);
+        horizontalLayout_15->addWidget(dateEdit);
 
-        checkBox_2 = new QCheckBox(centralwidget);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        dateEdit_2 = new QDateEdit(groupBox);
+        dateEdit_2->setObjectName(QString::fromUtf8("dateEdit_2"));
 
-        horizontalLayout_14->addWidget(checkBox_2);
+        horizontalLayout_15->addWidget(dateEdit_2);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_14->addItem(horizontalSpacer_4);
+        horizontalLayout_14->addWidget(groupBox);
 
-        checkBox_3 = new QCheckBox(centralwidget);
+        groupBox_2 = new QGroupBox(groupBox_3);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        gridLayout_3 = new QGridLayout(groupBox_2);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        checkBox_3 = new QCheckBox(groupBox_2);
         checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
 
-        horizontalLayout_14->addWidget(checkBox_3);
+        gridLayout_3->addWidget(checkBox_3, 0, 2, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        checkBox_1 = new QCheckBox(groupBox_2);
+        checkBox_1->setObjectName(QString::fromUtf8("checkBox_1"));
+        checkBox_1->setEnabled(true);
+        checkBox_1->setCheckable(true);
+        checkBox_1->setChecked(false);
 
-        horizontalLayout_14->addItem(horizontalSpacer_3);
+        gridLayout_3->addWidget(checkBox_1, 0, 0, 1, 1);
 
-        checkBox_4 = new QCheckBox(centralwidget);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
+        checkBox_2 = new QCheckBox(groupBox_2);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
 
-        horizontalLayout_14->addWidget(checkBox_4);
+        gridLayout_3->addWidget(checkBox_2, 0, 1, 1, 1);
 
-        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_14->addItem(horizontalSpacer_17);
-
-        checkBox_5 = new QCheckBox(centralwidget);
+        checkBox_5 = new QCheckBox(groupBox_2);
         checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
 
-        horizontalLayout_14->addWidget(checkBox_5);
+        gridLayout_3->addWidget(checkBox_5, 1, 1, 1, 1);
 
-        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        checkBox_4 = new QCheckBox(groupBox_2);
+        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
 
-        horizontalLayout_14->addItem(horizontalSpacer_18);
-
-        checkBox_11 = new QCheckBox(centralwidget);
-        checkBox_11->setObjectName(QString::fromUtf8("checkBox_11"));
-
-        horizontalLayout_14->addWidget(checkBox_11);
-
-        horizontalSpacer_19 = new QSpacerItem(28, 13, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_14->addItem(horizontalSpacer_19);
+        gridLayout_3->addWidget(checkBox_4, 1, 0, 1, 1);
 
 
-        verticalLayout_7->addLayout(horizontalLayout_14);
+        horizontalLayout_14->addWidget(groupBox_2);
 
-        verticalSpacer_5 = new QSpacerItem(20, 13, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        pushButton = new QPushButton(groupBox_3);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
-        verticalLayout_7->addItem(verticalSpacer_5);
+        horizontalLayout_14->addWidget(pushButton);
 
-        calendarWidget = new QCalendarWidget(centralwidget);
-        calendarWidget->setObjectName(QString::fromUtf8("calendarWidget"));
 
-        verticalLayout_7->addWidget(calendarWidget);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer_2);
+        verticalLayout_6->addWidget(groupBox_3);
 
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        verticalLayout_7->addWidget(label_3);
+        verticalLayout_6->addWidget(label_3);
 
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_13->addItem(horizontalSpacer_5);
-
         graphicsView = new QtCharts::QChartView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
 
         horizontalLayout_13->addWidget(graphicsView);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_13->addItem(horizontalSpacer_2);
 
         graphicsView_3 = new QtCharts::QChartView(centralwidget);
         graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
 
         horizontalLayout_13->addWidget(graphicsView_3);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_13->addItem(horizontalSpacer);
-
         graphicsView_2 = new QtCharts::QChartView(centralwidget);
         graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
 
         horizontalLayout_13->addWidget(graphicsView_2);
 
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_13->addItem(horizontalSpacer_6);
+        verticalLayout_6->addLayout(horizontalLayout_13);
 
-
-        verticalLayout_7->addLayout(horizontalLayout_13);
-
-        verticalSpacer_6 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer_6);
-
-        verticalLayout_6 = new QVBoxLayout();
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout_6->addWidget(label_2);
 
-        verticalSpacer_9 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        graphicsView_pret = new QtCharts::QChartView(centralwidget);
+        graphicsView_pret->setObjectName(QString::fromUtf8("graphicsView_pret"));
+        graphicsView_pret->setEnabled(true);
+        graphicsView_pret->setInteractive(false);
 
-        verticalLayout_6->addItem(verticalSpacer_9);
+        verticalLayout_6->addWidget(graphicsView_pret);
 
-        graphicsView_7 = new QtCharts::QChartView(centralwidget);
-        graphicsView_7->setObjectName(QString::fromUtf8("graphicsView_7"));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
-        verticalLayout_6->addWidget(graphicsView_7);
+        verticalLayout_6->addWidget(pushButton_2);
 
+        pushButton_retour = new QPushButton(centralwidget);
+        pushButton_retour->setObjectName(QString::fromUtf8("pushButton_retour"));
 
-        verticalLayout_7->addLayout(verticalLayout_6);
-
-        verticalSpacer_8 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_7->addItem(verticalSpacer_8);
+        verticalLayout_6->addWidget(pushButton_retour);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -235,14 +199,20 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "                                                                                                      LA BANQUE ", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("MainWindow", "agence 1", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("MainWindow", "agence 2", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("MainWindow", "agence 3", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("MainWindow", "agence 4", nullptr));
-        checkBox_11->setText(QCoreApplication::translate("MainWindow", "agence 5", nullptr));
+        lineEdit->setText(QCoreApplication::translate("MainWindow", "                                                                                                               La Banque", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "modif_chart", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "modif_date", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "choisir_agneces", nullptr));
+        checkBox_3->setText(QCoreApplication::translate("MainWindow", "agence 3", nullptr));
+        checkBox_1->setText(QCoreApplication::translate("MainWindow", "agence 1", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("MainWindow", "agence 2", nullptr));
+        checkBox_5->setText(QCoreApplication::translate("MainWindow", "agence 5", nullptr));
+        checkBox_4->setText(QCoreApplication::translate("MainWindow", "agence 4", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "ok", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "                               ca                                                                            cb                                                              cas ", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "                                                                                                            pr\303\252t", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "       pr\303\252t", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "info_on_pr\303\252t", nullptr));
+        pushButton_retour->setText(QCoreApplication::translate("MainWindow", "retour_sur_main", nullptr));
     } // retranslateUi
 
 };

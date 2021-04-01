@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>802</width>
-    <height>822</height>
+    <width>868</width>
+    <height>757</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,185 +17,103 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_7">
+   <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
-     <spacer name="verticalSpacer_7">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="enabled">
+       <bool>false</bool>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>2</height>
-       </size>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
       </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
       <property name="text">
-       <string>                                                                                                      LA BANQUE </string>
+       <string>                                                                                                               La Banque</string>
       </property>
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>modif_chart</string>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_14">
-      <item>
-       <spacer name="horizontalSpacer_7">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="text">
-         <string>agence 1</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_3">
-        <property name="text">
-         <string>agence 2</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_4">
-        <property name="text">
-         <string>agence 3</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_17">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_5">
-        <property name="text">
-         <string>agence 4</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_18">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_11">
-        <property name="text">
-         <string>agence 5</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_19">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>28</width>
-          <height>13</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>13</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QCalendarWidget" name="calendarWidget"/>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
+      <layout class="QHBoxLayout" name="horizontalLayout_14">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>modif_date</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <item>
+           <widget class="QDateEdit" name="dateEdit"/>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEdit_2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>choisir_agneces</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="2">
+           <widget class="QCheckBox" name="checkBox_3">
+            <property name="text">
+             <string>agence 3</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="checkBox_1">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>agence 1</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="checkBox_2">
+            <property name="text">
+             <string>agence 2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QCheckBox" name="checkBox_5">
+            <property name="text">
+             <string>agence 5</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="checkBox_4">
+            <property name="text">
+             <string>agence 4</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>ok</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_3">
@@ -207,120 +125,46 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_13">
       <item>
-       <spacer name="horizontalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QtCharts::QChartView" name="graphicsView"/>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
       <item>
        <widget class="QtCharts::QChartView" name="graphicsView_3"/>
       </item>
       <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QtCharts::QChartView" name="graphicsView_2"/>
       </item>
-      <item>
-       <spacer name="horizontalSpacer_6">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </item>
     <item>
-     <spacer name="verticalSpacer_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>       prêt</string>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
-      </property>
-     </spacer>
+     </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>                                                                                                            prêt</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_9">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QtCharts::QChartView" name="graphicsView_7"/>
-      </item>
-     </layout>
+     <widget class="QtCharts::QChartView" name="graphicsView_pret">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer_8">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>info_on_prêt</string>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_retour">
+      <property name="text">
+       <string>retour_sur_main</string>
       </property>
-     </spacer>
+     </widget>
     </item>
    </layout>
   </widget>
