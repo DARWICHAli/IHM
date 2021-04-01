@@ -24,6 +24,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView_pret->hide();
     ui->pushButton_retour->hide();
 
+    QObject::connect(ui->pushButton_2, SIGNAL(released()), this, SLOT(on_pushButton_2_pressed()));
+    QObject::connect(ui->pushButton, SIGNAL(released()), this, SLOT(on_pushButton_pressed()));
+    QObject::connect(ui->pushButton_retour, SIGNAL(released()), this, SLOT(on_pushButton_retour_pressed()));
+
+
 
     QBarSet *set0 = new QBarSet("Jane");
     QBarSet *set1 = new QBarSet("John");
@@ -77,6 +82,53 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 }
+void MainWindow::refreshCharts()
+{
+    //on check les checkbox , check dates
+    //get donner from bdd
+    //set new data
+}
+
+void MainWindow::on_pushButton_pressed()
+{
+
+    return;
+}
+
+
+void MainWindow::on_pushButton_2_pressed()
+{
+//    QPushButton* pushButtonSender = qobject_cast<QPushButton*>(sender()); //To retrieve the pushed button.
+//    CardButton* cardButtonSender = dynamic_cast<CardButton*>(pushButtonSender);
+    //This ^ is a dynamic cast: it checks in real time if pushButtonSender is cast-able into a CardButton*.
+    //If you were to use this cast on a QPushButton that isn't also a CardButton, it would return nullptr.
+    ui->graphicsView_pret->show();
+    ui->graphicsView->hide();
+    ui->graphicsView_2->hide();
+    ui->graphicsView_3->hide();
+    ui->pushButton_retour->show();
+    ui->pushButton_2->hide();
+
+    return;
+}
+
+
+void MainWindow::on_pushButton_retour_pressed()
+{
+    ui->graphicsView_pret->hide();
+    ui->graphicsView->show();
+    ui->graphicsView_2->show();
+    ui->graphicsView_3->show();
+    ui->pushButton_2->show();
+    ui->pushButton_retour->hide();
+    //refresh chart
+
+    return;
+}
+
+
+
+
 
 MainWindow::~MainWindow()
 {

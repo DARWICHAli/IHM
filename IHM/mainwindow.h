@@ -15,7 +15,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void refreshCharts();
+
 private:
     Ui::MainWindow *ui;
+
+
+private slots:
+    void on_pushButton_retour_pressed();
+    void on_pushButton_2_pressed();
+    void on_pushButton_pressed();
+
 };
 #endif // MAINWINDOW_H

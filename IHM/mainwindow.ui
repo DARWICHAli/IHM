@@ -123,7 +123,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_13">
+     <layout class="QHBoxLayout" name="horizontalLayout_1">
       <item>
        <widget class="QtCharts::QChartView" name="graphicsView"/>
       </item>

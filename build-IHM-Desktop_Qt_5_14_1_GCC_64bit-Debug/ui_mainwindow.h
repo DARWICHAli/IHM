@@ -48,7 +48,7 @@ public:
     QCheckBox *checkBox_4;
     QPushButton *pushButton;
     QLabel *label_3;
-    QHBoxLayout *horizontalLayout_13;
+    QHBoxLayout *horizontalLayout_1;
     QtCharts::QChartView *graphicsView;
     QtCharts::QChartView *graphicsView_3;
     QtCharts::QChartView *graphicsView_2;
@@ -144,25 +144,25 @@ public:
 
         verticalLayout_6->addWidget(label_3);
 
-        horizontalLayout_13 = new QHBoxLayout();
-        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
+        horizontalLayout_1 = new QHBoxLayout();
+        horizontalLayout_1->setObjectName(QString::fromUtf8("horizontalLayout_1"));
         graphicsView = new QtCharts::QChartView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
 
-        horizontalLayout_13->addWidget(graphicsView);
+        horizontalLayout_1->addWidget(graphicsView);
 
         graphicsView_3 = new QtCharts::QChartView(centralwidget);
         graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
 
-        horizontalLayout_13->addWidget(graphicsView_3);
+        horizontalLayout_1->addWidget(graphicsView_3);
 
         graphicsView_2 = new QtCharts::QChartView(centralwidget);
         graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
 
-        horizontalLayout_13->addWidget(graphicsView_2);
+        horizontalLayout_1->addWidget(graphicsView_2);
 
 
-        verticalLayout_6->addLayout(horizontalLayout_13);
+        verticalLayout_6->addLayout(horizontalLayout_1);
 
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
