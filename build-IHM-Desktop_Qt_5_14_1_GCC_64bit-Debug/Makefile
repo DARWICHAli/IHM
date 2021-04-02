@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../IHM -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../IHM -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/ali/Qt5.14.1/5.14.1/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = IHM1.0.0
 DISTDIR = /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/.tmp/IHM1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/ali/Qt5.14.1/5.14.1/gcc_64/lib
-LIBS          = $(SUBLIBS) /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Charts.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Widgets.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Gui.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Charts.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Widgets.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Multimedia.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Gui.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Network.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -772,7 +772,7 @@ moc_mainwindow.cpp: ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qicon.h \
 		moc_predefs.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc
-	/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc $(DEFINES) --include /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/moc_predefs.h -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++ -I/home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/IHM -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../IHM/mainwindow.h -o moc_mainwindow.cpp
+	/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc $(DEFINES) --include /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/moc_predefs.h -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++ -I/home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/IHM -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../IHM/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1061,20 +1061,30 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qguiapplication.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qinputmethod.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QCalendarWidget \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qcalendarwidget.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdatetime.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QCheckBox \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QHBoxLayout \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QDateEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdatetime.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcalendar.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qvalidator.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGridLayout \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlayout.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgridlayout.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QLabel \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlabel.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGroupBox \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QLineEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextcursor.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextformat.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QStatusBar \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QVBoxLayout \
@@ -1084,7 +1094,28 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QLineSeries \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qlineseries.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QXYSeries \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qxyseries.h
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qxyseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarSet \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarset.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAbstractBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qabstractbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QStringList \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarCategoryAxis \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarcategoryaxis.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QValueAxis \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qvalueaxis.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPercentBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpercentbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPieSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpieseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPieSlice \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpieslice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/QSound \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qsound.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimedia-config.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../IHM/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

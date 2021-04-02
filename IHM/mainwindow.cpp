@@ -10,6 +10,13 @@
 #include <QValueAxis>
 #include <QPercentBarSeries>
 #include <QPieSeries>
+
+#include <QSound>
+#include <QCoreApplication>
+
+
+
+
 using namespace QtCharts;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -187,9 +194,10 @@ void MainWindow::percentchart(int x)
         QPieSeries *series = new QPieSeries();
         series->setHoleSize(0.35);
         series->append("Protein 4.2%", 4.2);
-        QPieSlice *slice = series->append("Fat 15.6%", 15.6);
-        slice->setExploded();
-        slice->setLabelVisible();
+//        QPieSlice *slice = series->append("Fat 15.6%", 15.6);
+//        slice->setExploded();
+//        slice->setLabelVisible();
+        series->append("Fat 15.6%", 15.6);
         series->append("Other 23.8%", 23.8);
         series->append("Carbs 56.4%", 56.4);
 
@@ -262,11 +270,20 @@ void MainWindow::percentchart(int x)
     }
 
 }
-
 //ici on check le date et checkboxes et on met a jour les charts
 void MainWindow::on_pushButton_pressed()
 {
 
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_2.wav");
+    bool x1 ,x2 ,x3 ,x4 ,x5;
+    x1 = ui->checkBox_1->isChecked();
+    x2 = ui->checkBox_2->isChecked();
+    x3 = ui->checkBox_3->isChecked();
+    x4 = ui->checkBox_4->isChecked();
+    x5 = ui->checkBox_5->isChecked();
+    (void)x1 ,(void)x2 ,(void)x3 ,(void)x4 ,(void)x5;
+    //printf("%d %d %d %d %d\n", x1 , x2 ,x3 ,x4 ,x5);
+    //printf("%d",ui->dateEdit->date());
     refreshCharts(1);
     refreshCharts(2);
     refreshCharts(3);
@@ -277,10 +294,8 @@ void MainWindow::on_pushButton_pressed()
 
 void MainWindow::on_pushButton_2_pressed()
 {
-//    QPushButton* pushButtonSender = qobject_cast<QPushButton*>(sender()); //To retrieve the pushed button.
-//    CardButton* cardButtonSender = dynamic_cast<CardButton*>(pushButtonSender);
-    //This ^ is a dynamic cast: it checks in real time if pushButtonSender is cast-able into a CardButton*.
-    //If you were to use this cast on a QPushButton that isn't also a CardButton, it would return nullptr.
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_2.wav");
+
     ui->graphicsView_pret->show();
     ui->graphicsView->hide();
     ui->graphicsView_2->hide();
@@ -300,6 +315,8 @@ void MainWindow::on_pushButton_2_pressed()
 
 void MainWindow::on_pushButton_retour_pressed()
 {
+
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_2.wav");
     ui->graphicsView_pret->hide();
     ui->graphicsView->show();
     ui->graphicsView_2->show();
@@ -308,9 +325,9 @@ void MainWindow::on_pushButton_retour_pressed()
     ui->pushButton_3->show();
     ui->pushButton_4->show();
     ui->pushButton_5->show();
-    ui->pushButton_6->show();
-    ui->pushButton_7->show();
-    ui->pushButton_8->show();
+    refreshCharts(1);
+    refreshCharts(2);
+    refreshCharts(3);
     ui->pushButton_retour->hide();
     ui->lineEdit_pret->hide();
     ui->lineEdit_3names->show();
@@ -320,24 +337,30 @@ void MainWindow::on_pushButton_retour_pressed()
 }
 void MainWindow::on_pushButton_3_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
     ui->pushButton_3->hide();
     ui->pushButton_6->show();
     percentchart(1);
 }
 void MainWindow::on_pushButton_4_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
     ui->pushButton_4->hide();
     ui->pushButton_7->show();
     percentchart(2);
 }
 void MainWindow::on_pushButton_5_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
+
     ui->pushButton_5->hide();
     ui->pushButton_8->show();
     percentchart(3);
 }
 void MainWindow::on_pushButton_6_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
+
     ui->pushButton_6->hide();
     ui->pushButton_3->show();
     refreshCharts(1);
@@ -345,6 +368,8 @@ void MainWindow::on_pushButton_6_pressed()
 
 void MainWindow::on_pushButton_7_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
+
     ui->pushButton_7->hide();
     ui->pushButton_4->show();
     refreshCharts(2);
@@ -352,6 +377,7 @@ void MainWindow::on_pushButton_7_pressed()
 
 void MainWindow::on_pushButton_8_pressed()
 {
+    QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");
     ui->pushButton_8->hide();
     ui->pushButton_5->show();
     refreshCharts(3);
