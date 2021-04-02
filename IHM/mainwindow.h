@@ -15,7 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void refreshCharts();
+    void refreshCharts(int x);
+    void percentchart(int x);
 
 private:
     Ui::MainWindow *ui;
@@ -25,6 +26,12 @@ private slots:
     void on_pushButton_retour_pressed();
     void on_pushButton_2_pressed();
     void on_pushButton_pressed();
+    void on_pushButton_3_pressed();
+    void on_pushButton_4_pressed();
+    void on_pushButton_5_pressed();
+    void on_pushButton_6_pressed();
+    void on_pushButton_7_pressed();
+    void on_pushButton_8_pressed();
 
 };
 #endif // MAINWINDOW_H
