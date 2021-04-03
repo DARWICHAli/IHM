@@ -18,6 +18,8 @@ public:
     void refreshCharts(int x);
     void percentchart(int x);
 
+
+    bool createConnection();
 private:
     Ui::MainWindow *ui;
 

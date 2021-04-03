@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../IHM -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../IHM -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/ali/Qt5.14.1/5.14.1/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = IHM1.0.0
 DISTDIR = /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/.tmp/IHM1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/ali/Qt5.14.1/5.14.1/gcc_64/lib
-LIBS          = $(SUBLIBS) /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Charts.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Widgets.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Multimedia.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Gui.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Network.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Core.so -lGL -lpthread   
+LIBS          = $(SUBLIBS) /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Charts.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Widgets.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Multimedia.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Gui.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Sql.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Network.so /home/ali/Qt5.14.1/5.14.1/gcc_64/lib/libQt5Core.so -lGL -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -772,7 +772,7 @@ moc_mainwindow.cpp: ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qicon.h \
 		moc_predefs.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc
-	/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc $(DEFINES) --include /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/moc_predefs.h -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++ -I/home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/IHM -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../IHM/mainwindow.h -o moc_mainwindow.cpp
+	/home/ali/Qt5.14.1/5.14.1/gcc_64/bin/moc $(DEFINES) --include /home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/build-IHM-Desktop_Qt_5_14_1_GCC_64bit-Debug/moc_predefs.h -I/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/linux-g++ -I/home/ali/Documents/uni/L3/S6/IHM/tps/tp3/ihm/IHM -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtNetwork -I/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../IHM/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1115,7 +1115,23 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/QSound \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qsound.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimedia-config.h
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QCoreApplication \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlDatabase \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qtsql-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlQuery \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlquery.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QMessageBox \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdialog.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlRelationalTableModel \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../IHM/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
