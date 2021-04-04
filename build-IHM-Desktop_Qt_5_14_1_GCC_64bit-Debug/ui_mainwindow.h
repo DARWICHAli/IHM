@@ -31,9 +31,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer;
-    QLineEdit *lineEdit_title;
-    QSpacerItem *horizontalSpacer_2;
+    QtCharts::QChartView *graphicsView_3;
     QGroupBox *groupBox_3;
     QHBoxLayout *horizontalLayout_14;
     QGroupBox *groupBox;
@@ -48,49 +46,45 @@ public:
     QCheckBox *checkBox_3;
     QCheckBox *checkBox_1;
     QPushButton *pushButton;
-    QGridLayout *gridLayout_4;
-    QtCharts::QChartView *graphicsView;
-    QtCharts::QChartView *graphicsView_2;
-    QPushButton *pushButton_6;
-    QtCharts::QChartView *graphicsView_3;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_3;
+    QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton_4;
     QPushButton *pushButton_7;
-    QtCharts::QChartView *graphicsView_pret;
-    QLineEdit *lineEdit_pret;
-    QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
     QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_title;
+    QtCharts::QChartView *graphicsView_pret;
+    QtCharts::QChartView *graphicsView;
+    QLineEdit *lineEdit;
+    QtCharts::QChartView *graphicsView_2;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_6;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_8;
+    QLineEdit *lineEdit_pret;
     QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_retour;
+    QSpacerItem *horizontalSpacer_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(868, 757);
+        MainWindow->resize(893, 776);
+        MainWindow->setAutoFillBackground(false);
+        MainWindow->setDocumentMode(false);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setAutoFillBackground(false);
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        graphicsView_3 = new QtCharts::QChartView(centralwidget);
+        graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
 
-        gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
-
-        lineEdit_title = new QLineEdit(centralwidget);
-        lineEdit_title->setObjectName(QString::fromUtf8("lineEdit_title"));
-        lineEdit_title->setEnabled(false);
-        lineEdit_title->setInputMethodHints(Qt::ImhNone);
-
-        gridLayout->addWidget(lineEdit_title, 0, 1, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 0, 2, 1, 1);
+        gridLayout->addWidget(graphicsView_3, 3, 2, 1, 2);
 
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
@@ -156,96 +150,121 @@ public:
 
         gridLayout->addWidget(groupBox_3, 1, 0, 1, 3);
 
-        gridLayout_4 = new QGridLayout();
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        graphicsView = new QtCharts::QChartView(centralwidget);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-
-        gridLayout_4->addWidget(graphicsView, 0, 0, 1, 1);
-
-        graphicsView_2 = new QtCharts::QChartView(centralwidget);
-        graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
-
-        gridLayout_4->addWidget(graphicsView_2, 0, 1, 1, 1);
-
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-
-        gridLayout_4->addWidget(pushButton_6, 1, 0, 1, 1);
-
-        graphicsView_3 = new QtCharts::QChartView(centralwidget);
-        graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
-
-        gridLayout_4->addWidget(graphicsView_3, 0, 2, 1, 1);
-
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-
-        gridLayout_4->addWidget(pushButton_5, 2, 2, 1, 1);
-
-        pushButton_8 = new QPushButton(centralwidget);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-
-        gridLayout_4->addWidget(pushButton_8, 1, 2, 1, 1);
-
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        gridLayout_4->addWidget(pushButton_3, 2, 0, 1, 1);
-
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
 
-        gridLayout_4->addWidget(pushButton_4, 2, 1, 1, 1);
+        horizontalLayout_2->addWidget(pushButton_4);
 
         pushButton_7 = new QPushButton(centralwidget);
         pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
 
-        gridLayout_4->addWidget(pushButton_7, 1, 1, 1, 1);
+        horizontalLayout_2->addWidget(pushButton_7);
 
 
-        gridLayout->addLayout(gridLayout_4, 3, 0, 1, 3);
-
-        graphicsView_pret = new QtCharts::QChartView(centralwidget);
-        graphicsView_pret->setObjectName(QString::fromUtf8("graphicsView_pret"));
-        graphicsView_pret->setEnabled(true);
-        graphicsView_pret->setInteractive(false);
-
-        gridLayout->addWidget(graphicsView_pret, 5, 0, 1, 3);
-
-        lineEdit_pret = new QLineEdit(centralwidget);
-        lineEdit_pret->setObjectName(QString::fromUtf8("lineEdit_pret"));
-        lineEdit_pret->setEnabled(false);
-
-        gridLayout->addWidget(lineEdit_pret, 4, 0, 1, 3);
-
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setEnabled(false);
-
-        gridLayout->addWidget(lineEdit, 2, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout_2, 4, 1, 1, 1);
 
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setEnabled(false);
+        lineEdit_2->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(lineEdit_2, 2, 0, 1, 1);
 
         lineEdit_3 = new QLineEdit(centralwidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
         lineEdit_3->setEnabled(false);
+        lineEdit_3->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(lineEdit_3, 2, 1, 1, 1);
+
+        lineEdit_title = new QLineEdit(centralwidget);
+        lineEdit_title->setObjectName(QString::fromUtf8("lineEdit_title"));
+        lineEdit_title->setEnabled(false);
+        lineEdit_title->setInputMethodHints(Qt::ImhNone);
+        lineEdit_title->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(lineEdit_title, 0, 1, 1, 1);
+
+        graphicsView_pret = new QtCharts::QChartView(centralwidget);
+        graphicsView_pret->setObjectName(QString::fromUtf8("graphicsView_pret"));
+        graphicsView_pret->setEnabled(true);
+        graphicsView_pret->setInteractive(false);
+
+        gridLayout->addWidget(graphicsView_pret, 6, 0, 1, 4);
+
+        graphicsView = new QtCharts::QChartView(centralwidget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+
+        gridLayout->addWidget(graphicsView, 3, 0, 1, 1);
+
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setEnabled(false);
+        lineEdit->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(lineEdit, 2, 2, 1, 2);
+
+        graphicsView_2 = new QtCharts::QChartView(centralwidget);
+        graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
+
+        gridLayout->addWidget(graphicsView_2, 3, 1, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+
+        horizontalLayout->addWidget(pushButton_3);
+
+        pushButton_6 = new QPushButton(centralwidget);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+
+        horizontalLayout->addWidget(pushButton_6);
+
+
+        gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+
+        horizontalLayout_3->addWidget(pushButton_5);
+
+        pushButton_8 = new QPushButton(centralwidget);
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+
+        horizontalLayout_3->addWidget(pushButton_8);
+
+
+        gridLayout->addLayout(horizontalLayout_3, 4, 2, 1, 1);
+
+        lineEdit_pret = new QLineEdit(centralwidget);
+        lineEdit_pret->setObjectName(QString::fromUtf8("lineEdit_pret"));
+        lineEdit_pret->setEnabled(false);
+        lineEdit_pret->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(lineEdit_pret, 5, 0, 1, 3);
 
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
-        gridLayout->addWidget(pushButton_2, 6, 0, 1, 3);
+        gridLayout->addWidget(pushButton_2, 7, 0, 1, 4);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
 
         pushButton_retour = new QPushButton(centralwidget);
         pushButton_retour->setObjectName(QString::fromUtf8("pushButton_retour"));
 
-        gridLayout->addWidget(pushButton_retour, 7, 0, 1, 3);
+        gridLayout->addWidget(pushButton_retour, 8, 0, 1, 4);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 0, 2, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -259,8 +278,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        lineEdit_title->setText(QCoreApplication::translate("MainWindow", " La Banque", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "La banque ", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "modif_chart", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "modif_date", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "choisir_agneces", nullptr));
@@ -270,16 +288,17 @@ public:
         checkBox_3->setText(QCoreApplication::translate("MainWindow", "agence 3", nullptr));
         checkBox_1->setText(QCoreApplication::translate("MainWindow", "agence 1", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "ok", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("MainWindow", "bars", nullptr));
+        lineEdit_2->setText(QCoreApplication::translate("MainWindow", "canal bancaire", nullptr));
+        lineEdit_3->setText(QCoreApplication::translate("MainWindow", "canal assurance", nullptr));
+        lineEdit_title->setText(QCoreApplication::translate("MainWindow", " La Banque", nullptr));
+        lineEdit->setText(QCoreApplication::translate("MainWindow", "canal boursier", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "bars", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWindow", "bars", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWindow", "bars", nullptr));
-        lineEdit_pret->setText(QCoreApplication::translate("MainWindow", "                                                                                                                 PR\303\212T", nullptr));
-        lineEdit->setText(QCoreApplication::translate("MainWindow", "canal boursier", nullptr));
-        lineEdit_2->setText(QCoreApplication::translate("MainWindow", "canal bancaire", nullptr));
-        lineEdit_3->setText(QCoreApplication::translate("MainWindow", "canal assurance", nullptr));
+        lineEdit_pret->setText(QCoreApplication::translate("MainWindow", "PR\303\212T", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "info_on_pr\303\252t", nullptr));
         pushButton_retour->setText(QCoreApplication::translate("MainWindow", "retour_sur_main", nullptr));
     } // retranslateUi
