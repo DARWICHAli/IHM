@@ -117,23 +117,43 @@ void MainWindow::refreshCharts(int x)
             int prix = query.value(0).toInt();
             *set0  << prix ;
         }
-        query.exec("Select prix from canal_bancaire where type = 'pret_auto';");
+        temp = "Select prix from canal_bancaire where type = 'pret_auto'";
+        if(count)
+            temp.append("AND ");
+        temp.append(str);
+        tmp1 = QString::fromStdString(temp);
+        query.exec(tmp1);
         while (query.next()) {
             int prix = query.value(0).toInt();
             *set1  << prix ;
         }
-        query.exec("Select prix from canal_bancaire where type = 'compte_courant';");
+        temp = "Select prix from canal_bancaire where type = 'compte_courant'";
+        if(count)
+            temp.append("AND ");
+        temp.append(str);
+        tmp1 = QString::fromStdString(temp);
+        query.exec(tmp1);
         while (query.next()) {
             int prix = query.value(0).toInt();
             *set2  << prix ;
         }
 
-        query.exec("Select prix from canal_bancaire where type = 'compte_epargne';");
+        temp = "Select prix from canal_bancaire where type = 'compte_epargne'";
+        if(count)
+            temp.append("AND ");
+        temp.append(str);
+        tmp1 = QString::fromStdString(temp);
+        query.exec(tmp1);
         while (query.next()) {
             int prix = query.value(0).toInt();
             *set3  << prix ;
         }
-        query.exec("Select prix from canal_bancaire where type = 'autre';");
+        temp = "Select prix from canal_bancaire where type = 'autre'";
+        if(count)
+            temp.append("AND ");
+        temp.append(str);
+        tmp1 = QString::fromStdString(temp);
+        query.exec(tmp1);
         while (query.next()) {
             int prix = query.value(0).toInt();
             *set4  << prix ;
@@ -551,21 +571,24 @@ bool MainWindow::createConnection()
              "banquier varchar(20),"
              "client varchar(20))");
 
-    query.exec("insert into canal_bancaire values(1,'agence_a', 'pret_hab', 100 , 2 , 1000 , '2021-03-04' , 'bob' , 'ali')");
-    query.exec("insert into canal_bancaire values(2,'agence_b', 'pret_hab', 150 , 5 , 2000 , '2021-02-04' , 'alice' , 'client_2')");
-    query.exec("insert into canal_bancaire values(3,'agence_a', 'pret_hab', 200 , 10 , 5000 , '2021-04-04' , 'bro' , ','client_3')");
+    query.exec("insert into canal_bancaire values(1,'agence_a', 'pret_hab', 5000 , 2 , 1000 , '2021-03-04' , 'bob' , 'ali')");
+    query.exec("insert into canal_bancaire values(2,'agence_b', 'pret_hab', 35000 , 5 , 2000 , '2021-02-04' , 'alice' , 'client_2')");
+    query.exec("insert into canal_bancaire values(3,'agence_a', 'pret_hab', 6000 , 10 , 5000 , '2021-04-04' , 'bro' , ','client_3')");
 
-    query.exec("insert into canal_bancaire values(4,'agence_b', 'pret_auto', 100 , 4 , 500 , '2021-04-04' , 'bob' , 'ali')");
-    query.exec("insert into canal_bancaire values(5,'agence_a', 'pret_auto', 125 , 6 , 200 , '2021-04-01' , 'dude' , 'client_2')");
-    query.exec("insert into canal_bancaire values(6,'agence_c', 'pret_auto', 500 , 8 , 350 , '2021-04-06' , 'bob' , 'client_5')");
+    query.exec("insert into canal_bancaire values(4,'agence_b', 'pret_auto', 1000 , 4 , 500 , '2021-04-04' , 'bob' , 'ali')");
+    query.exec("insert into canal_bancaire values(5,'agence_a', 'pret_auto', 8250 , 6 , 200 , '2021-04-01' , 'dude' , 'client_2')");
+    query.exec("insert into canal_bancaire values(6,'agence_c', 'pret_auto', 5000 , 8 , 350 , '2021-04-06' , 'bob' , 'client_5')");
 
     query.exec("insert into canal_bancaire values(7,'agence_c', 'compte_courant', 1000 , 10 , 2340 , '2021-04-08' , 'alice' , 'bob')");
     query.exec("insert into canal_bancaire values(8,'agence_e', 'compte_courant', 2500 , 15 , 1234 , '2021-04-09' , 'bob' , 'mec')");
-    query.exec("insert into canal_bancaire values(9,'agence_d', 'compte_courant', 10000 , 20 , 41324 , '2021-04-10' , 'bro' , 'darwich')");
+    query.exec("insert into canal_bancaire values(9,'agence_d', 'compte_courant', 10000 , 20 , 4132 , '2021-04-10' , 'bro' , 'darwich')");
 
     query.exec("insert into canal_bancaire values(10,'agence_d', 'compte_epargne', 1234 , 5 , 123 , '2021-04-21' , 'dude' , 'bob')");
     query.exec("insert into canal_bancaire values(11,'agence_c', 'compte_epargne', 4134 , 7 , 3121 , '2021-03-04' , 'bob' , 'ali')");
     query.exec("insert into canal_bancaire values(12,'agence_d', 'compte_epargne', 10034 , 9 , 3123 , '2021-02-04' , 'alice' , 'client_3')");
+    query.exec("insert into canal_bancaire values(13,'agence_e', 'autre', 200 , 15 , 1234 , '2021-04-09' , 'bob' , 'mec')");
+    query.exec("insert into canal_bancaire values(14,'agence_e', 'autre', 1200 , 15 , 1234 , '2021-04-09' , 'bob' , 'mec')");
+
 
     query.exec("create table canal_assurance(id int primary key,"
     "nom_agence varchar(20),"
