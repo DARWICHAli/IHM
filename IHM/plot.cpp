@@ -415,15 +415,6 @@ void refreshCharts(int x , Ui::MainWindow *ui)
                                   + "\n\n best client : " + bestclient  + " income  : " + QString::fromUtf8(to_string(client_value).c_str())
                                   + "\n\n best banquier :"+ bestbanquier + " income  : " + QString::fromUtf8(to_string(banquier_value).c_str())
                                   );
-
-//        ui->textEdit->setMarkdown("## Plus d'info sur chart");
-//        ui->textEdit->setMarkdown("### On a Volume de  :"+ QString::fromUtf8(to_string(f1 + f3).c_str()));
-//        ui->textEdit->setMarkdown("### On a CA de  :"+ QString::fromUtf8(to_string(f0 + f2 ).c_str()));
-//        ui->textEdit->setMarkdown("## Plus d'info");
-//        ui->textEdit->append("best agence: " + bestagence  + " income  : " + QString::fromUtf8(to_string(agence_value).c_str()) );
-//        ui->textEdit->append("best client : " + bestclient  + " income  : " + QString::fromUtf8(to_string(client_value).c_str()) );
-//        ui->textEdit->append("best banquier :"+ bestbanquier + " income  : " + QString::fromUtf8(to_string(banquier_value).c_str()) );
-
     }
 }
 

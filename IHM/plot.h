@@ -15,17 +15,12 @@
 #include <QBarCategoryAxis>
 #include <QValueAxis>
 #include <QPercentBarSeries>
-//#include <QPieSeries>
 
-//#include <QSound>
-//#include <QCoreApplication>
+#include <QTextDocument>
 
-//#include <QSqlDatabase>
 #include <QSqlQuery>
-//#include <QMessageBox>
 
-
-//#include <QString>
+#include <QTextEdit>
 
 
 using namespace QtCharts;

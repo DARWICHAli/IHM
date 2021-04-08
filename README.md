@@ -2,10 +2,6 @@
 
 
 
-5% ihm 
-95% QT
-
-
 If you use ubuntu
 
 to run without app or terminal 
