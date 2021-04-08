@@ -73,6 +73,12 @@ void refreshCharts(int x , Ui::MainWindow *ui)
     std::string temp;
     int y , m, d , y2 , m2 , d2;
     string sy1 ,sm1 ,sd1 ,sy2 ,sm2 ,sd2;
+    QString  bestbanquier;
+    QString  bestclient;
+    QString  bestagence;
+    int banquier_value  =0;
+    int client_value = 0;
+    int agence_value = 0;
 
     QDate  time1 = ui->dateTimeEdit->date();
     QDate  time2 = ui->dateTimeEdit_2->date();
@@ -120,7 +126,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         strtime.append(" AND '" + sy2 + "-"+ sm2 +"-"+ sd2+"' ");
     }
     if(count)
-        str.append(" ) ;");
+        str.append(" ) ");
 
     if(x == 1 )
     {
@@ -138,7 +144,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str + ";");
         query.exec( QString::fromStdString(temp));
         func(set0 , query);
 
@@ -147,7 +153,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str + ";");
         query.exec( QString::fromStdString(temp));
         func(set1 , query);
 
@@ -156,7 +162,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec( QString::fromStdString(temp));
         func(set2 , query);
 
@@ -166,7 +172,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec( QString::fromStdString(temp));
         func(set3 , query);
 
@@ -178,7 +184,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         }
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec( QString::fromStdString(temp));
         func(set4 , query);
 
@@ -206,7 +212,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND (");
-        temp.append(str);
+        temp.append(str + ";");
         query.exec(QString::fromStdString(temp));
 
         func(set0 , query);
@@ -218,7 +224,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
 
         if(count)
             temp.append("AND (");
-        temp.append(str);
+        temp.append(str+ ";");
 
         query.exec(QString::fromStdString(temp));
         func(set1 , query);
@@ -229,7 +235,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
             temp.append("AND" + strtime);
         if(count)
             temp.append("AND (");
-        temp.append(str);
+        temp.append(str+ ";");
 
         query.exec(QString::fromStdString(temp));
         func(set2 , query);
@@ -266,7 +272,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         }
 
 
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec(QString::fromStdString(temp));
         func(set0 , query);
 
@@ -283,12 +289,9 @@ void refreshCharts(int x , Ui::MainWindow *ui)
 
     else
     {
-        int f0=0,f1=0,f2=0,f3=0,f4=0,f5=0,f6=0,f7 =0,f8 =0 , f9 = 0;
+        int f0=0,f1=0,f2=0,f3=0;
         QBarSet *set0 = new QBarSet("P_hab");
         QBarSet *set1 = new QBarSet("P_auto");
-        QBarSet *set2 = new QBarSet("C_courant");
-        QBarSet *set3 = new QBarSet("C_epargne");
-        QBarSet *set4 = new QBarSet("autre");
 
         temp = "Select prix from canal_bancaire where type = 'pret_hab' ";
         if(strtime.length() != 0)
@@ -297,7 +300,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         if(count)
             temp.append("AND ( ");
 
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
              f0 += query.value(0).toInt() ;
@@ -313,7 +316,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         if(count)
             temp.append("AND ( ");
 
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
              f1 += query.value(0).toInt() ;
@@ -327,7 +330,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
 
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
             f2 += query.value(0).toInt() ;
@@ -337,119 +340,89 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         temp = "Select count(*) from canal_bancaire where type = 'pret_auto'";
         if(strtime.length() != 0)
             temp.append("AND" + strtime);
-
-
         if(count)
             temp.append("AND ( ");
-        temp.append(str);
+        temp.append(str+ ";");
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
             f3 += query.value(0).toInt() ;
        }
 
 
-        temp = "Select prix from canal_bancaire where type = 'compte_courant'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
+       temp =  "select banquier, sum(prix) from canal_bancaire where ( type = 'pret_hab' OR type = 'pret_auto') ";
+       if(strtime.length() != 0)
+           temp.append("AND" + strtime);
+       if(count)
+           temp.append("AND ( ");
+       temp.append(str);
+       temp.append("group by banquier order by sum(prix) desc;");
+       query.exec(QString::fromStdString(temp));
+       while (query.next()) {
+           bestbanquier = query.value(0).toString();
+           banquier_value = query.value(1).toInt() ;
+           break;
+      }
+
+       temp =  "select client, sum(prix) from canal_bancaire where ( type = 'pret_hab' OR type = 'pret_auto') ";
+       if(strtime.length() != 0)
+           temp.append("AND" + strtime);
+       if(count)
+           temp.append("AND ( ");
+       temp.append(str);
+       temp.append("group by client order by sum(prix) desc;");
+       query.exec(QString::fromStdString(temp));
+       while (query.next()) {
+           bestclient = query.value(0).toString();
+           client_value = query.value(1).toInt() ;
+           break;
+      }
+
+       temp =  "select nom_agence, sum(prix) from canal_bancaire where ( type = 'pret_hab' OR type = 'pret_auto') ";
+       if(strtime.length() != 0)
+           temp.append("AND" + strtime);
+       if(count)
+           temp.append("AND ( ");
+       temp.append(str);
+       temp.append("group by nom_agence order by sum(prix) desc;");
+       query.exec(QString::fromStdString(temp));
+       while (query.next()) {
+           bestagence = query.value(0).toString();
+           agence_value = query.value(1).toInt() ;
+           break;
+      }
 
 
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            f4 += query.value(0).toInt();
-        }
-        *set2  << f4 ;
 
 
-        temp = "Select count(*) from canal_bancaire where type = 'compte_courant'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
 
-
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            int prix = query.value(0).toInt();
-            f5 += prix;
-        }
-
-
-        temp = "Select prix from canal_bancaire where type = 'compte_epargne'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
-
-
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            f6 += query.value(0).toInt();
-        }
-        *set3  << f6 ;
-
-
-        temp = "Select count(*) from canal_bancaire where type = 'compte_epargne'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
-
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            f7 += query.value(0).toInt();
-        }
-
-        temp = "Select prix from canal_bancaire where type = 'autre'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
-
-
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            f8 += query.value(0).toInt();
-        }
-        *set4  << f8;
-
-
-        temp = "Select count(*) from canal_bancaire where type = 'autre'";
-        if(strtime.length() != 0)
-            temp.append("AND" + strtime);
-        if(count)
-            temp.append("AND ( ");
-        temp.append(str);
-        query.exec(QString::fromStdString(temp));
-        while (query.next()) {
-            f9 += query.value(0).toInt();
-        }
 
         QBarSeries *series = new QBarSeries();
         series->append(set0);
         series->append(set1);
-        series->append(set2);
-        series->append(set3);
-        series->append(set4);
 
         QChart *chart = new QChart();
-        setchartparam(chart , series , "Produits bancaire" , "CA" ,50000);
+        setchartparam(chart , series , "Produits bancaires" , "CA" ,50000);
         ui->graphicsView_pret->setChart(chart);
 
 
         ui->textEdit->clear();
-        ui->textEdit->append("hello world!");
-        ui->textEdit->append("On a Volume de  :"+ QString::fromUtf8(to_string(f1 + f3 + f5 +f7+ f9).c_str()));
-        ui->textEdit->append("On a CA de  :"+ QString::fromUtf8(to_string(f0 + f2 + f4 +f6+ f8).c_str()));
-        ui->textEdit->append("best agence");
-        ui->textEdit->append("best client");
-        ui->textEdit->append("best banquier");
+        ui->textEdit->setMarkdown("# Info sur Pret "
+                                  "\n\n## Plus d'info sur chart \n"
+                                  "\n On a Volume de  :"+ QString::fromUtf8(to_string(f1 + f3).c_str())
+                                  + "\n\n On a CA de  :"+ QString::fromUtf8(to_string(f0 + f2 ).c_str())
+                                  + "\n\n\n## Plus d'info"
+                                    "\n\n best agence: " + bestagence  + " income  : " + QString::fromUtf8(to_string(agence_value).c_str())
+                                  + "\n\n best client : " + bestclient  + " income  : " + QString::fromUtf8(to_string(client_value).c_str())
+                                  + "\n\n best banquier :"+ bestbanquier + " income  : " + QString::fromUtf8(to_string(banquier_value).c_str())
+                                  );
+
+//        ui->textEdit->setMarkdown("## Plus d'info sur chart");
+//        ui->textEdit->setMarkdown("### On a Volume de  :"+ QString::fromUtf8(to_string(f1 + f3).c_str()));
+//        ui->textEdit->setMarkdown("### On a CA de  :"+ QString::fromUtf8(to_string(f0 + f2 ).c_str()));
+//        ui->textEdit->setMarkdown("## Plus d'info");
+//        ui->textEdit->append("best agence: " + bestagence  + " income  : " + QString::fromUtf8(to_string(agence_value).c_str()) );
+//        ui->textEdit->append("best client : " + bestclient  + " income  : " + QString::fromUtf8(to_string(client_value).c_str()) );
+//        ui->textEdit->append("best banquier :"+ bestbanquier + " income  : " + QString::fromUtf8(to_string(banquier_value).c_str()) );
 
     }
 }
@@ -576,7 +549,7 @@ void caCharts(int x,Ui::MainWindow *ui)
 
         QChart *chart = new QChart();
 
-        setchartparam(chart , series , "Produits bancaire" , "CA" ,50000);
+        setchartparam(chart , series , "Produits bancaires" , "CA" ,50000);
         ui->graphicsView->setChart(chart);
 
     }
