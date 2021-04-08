@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../IHM/main.cpp \
-		../IHM/mainwindow.cpp moc_mainwindow.cpp
+		../IHM/mainwindow.cpp \
+		../IHM/plot.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		plot.o \
 		moc_mainwindow.o
 DIST          = /home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/common/unix.conf \
@@ -236,8 +238,10 @@ DIST          = /home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/exceptions.prf \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/yacc.prf \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/lex.prf \
-		../IHM/IHM.pro ../IHM/mainwindow.h ../IHM/main.cpp \
-		../IHM/mainwindow.cpp
+		../IHM/IHM.pro ../IHM/mainwindow.h \
+		../IHM/plot.h ../IHM/main.cpp \
+		../IHM/mainwindow.cpp \
+		../IHM/plot.cpp
 QMAKE_TARGET  = IHM
 DESTDIR       = 
 TARGET        = IHM
@@ -625,8 +629,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/ali/Qt5.14.1/5.14.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../IHM/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../IHM/main.cpp ../IHM/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../IHM/mainwindow.h ../IHM/plot.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../IHM/main.cpp ../IHM/mainwindow.cpp ../IHM/plot.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../IHM/mainwindow.ui $(DISTDIR)/
 
 
@@ -1064,7 +1068,7 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QCheckBox \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QDateEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QDateTimeEdit \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdatetimeedit.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdatetime.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcalendar.h \
@@ -1085,9 +1089,233 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextformat.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QPushButton \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QSpacerItem \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QStatusBar \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QTextEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextdocument.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QWidget \
+		../IHM/plot.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAreaSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qareaseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QLineSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qlineseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QXYSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qxyseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarSet \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarset.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAbstractBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qabstractbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QStringList \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QBarCategoryAxis \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qbarcategoryaxis.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QValueAxis \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qvalueaxis.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPercentBarSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpercentbarseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPieSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpieseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QPieSlice \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qpieslice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/QSound \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qsound.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QCoreApplication \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlDatabase \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qtsql-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlQuery \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlquery.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QMessageBox \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdialog.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../IHM/mainwindow.cpp
+
+plot.o: ../IHM/plot.cpp ../IHM/plot.h \
+		../IHM/mainwindow.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QMainWindow \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qconfig.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qtcore-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qsysinfo.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qlogging.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qflags.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qatomic.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qmutex.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qnumeric.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qversiontagging.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtgui-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qwidget.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qnamespace.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qobject.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstring.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qchar.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qbytearray.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qrefcount.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qarraydata.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringliteral.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringview.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qlist.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qalgorithms.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qiterator.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qpair.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qvector.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qpoint.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringlist.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qregexp.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcoreevent.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qmetatype.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qobject_impl.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qmargins.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qrect.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qsize.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpalette.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qcolor.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qrgb.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qrgba64.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qbrush.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qmatrix.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpolygon.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qregion.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdatastream.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qiodevice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qline.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtransform.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpainterpath.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qimage.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpixelformat.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpixmap.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qshareddata.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qhash.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qfont.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qfontinfo.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qcursor.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qkeysequence.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qevent.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qvariant.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qmap.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdebug.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qtextstream.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qlocale.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qset.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qurl.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qurlquery.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qfile.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qfiledevice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qvector2d.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qicon.h \
+		ui_mainwindow.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QChartView \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qchartview.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAbstractAxis \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qabstractaxis.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QChartGlobal \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qchartglobal.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QtGlobal \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/QPen \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpen.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/QFont \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QVariant \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAbstractSeries \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qabstractseries.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QObject \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QChart \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qchart.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QLegend \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qlegend.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGraphicsWidget \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/QBrush \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QMargins \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qpainter.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextoption.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qframe.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QApplication \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qapplication.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qeventloop.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qguiapplication.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qinputmethod.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QCheckBox \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QDateTimeEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qdatetime.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qcalendar.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qvalidator.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qregularexpression.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGridLayout \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlayout.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QGroupBox \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qgroupbox.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QLineEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextcursor.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextformat.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QPushButton \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QStatusBar \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QTextEdit \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtGui/qtextdocument.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QWidget \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/QAreaSeries \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCharts/qareaseries.h \
@@ -1126,13 +1354,8 @@ mainwindow.o: ../IHM/mainwindow.cpp ../IHM/mainwindow.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/QMessageBox \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtWidgets/qdialog.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/QSqlRelationalTableModel \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqltablemodel.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtSql/qsqlquerymodel.h \
-		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/ali/Qt5.14.1/5.14.1/gcc_64/include/QtCore/QString
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../IHM/mainwindow.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o plot.o ../IHM/plot.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
