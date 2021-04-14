@@ -305,7 +305,6 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         while (query.next()) {
              f0 += query.value(0).toInt() ;
         }
-        *set0 << f0;
 
 
         // pour Volume
@@ -320,7 +319,10 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
              f1 += query.value(0).toInt() ;
+             *set0 << query.value(0).toInt();
         }
+
+
 
 
         temp = "Select prix from canal_bancaire where type = 'pret_auto'";
@@ -335,7 +337,6 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         while (query.next()) {
             f2 += query.value(0).toInt() ;
        }
-       *set1 << f2;
 
         temp = "Select count(*) from canal_bancaire where type = 'pret_auto'";
         if(strtime.length() != 0)
@@ -343,10 +344,14 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         if(count)
             temp.append("AND ( ");
         temp.append(str+ ";");
+
         query.exec(QString::fromStdString(temp));
         while (query.next()) {
             f3 += query.value(0).toInt() ;
+            *set1 << query.value(0).toInt() ;
+
        }
+
 
 
        temp =  "select banquier, sum(prix) from canal_bancaire where ( type = 'pret_hab' OR type = 'pret_auto') ";
@@ -401,7 +406,7 @@ void refreshCharts(int x , Ui::MainWindow *ui)
         series->append(set1);
 
         QChart *chart = new QChart();
-        setchartparam(chart , series , "Produits bancaires" , "CA" ,50000);
+        setchartparam(chart , series , "Produits bancaires" , "VOLUME" ,10);
         ui->graphicsView_pret->setChart(chart);
 
 
