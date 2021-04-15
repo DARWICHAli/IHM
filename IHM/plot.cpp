@@ -119,12 +119,16 @@ void refreshCharts(int x , Ui::MainWindow *ui)
     sm2 = m2<10 ? "0"+ to_string(m2) : to_string(m2) ;
     sd2 = d2<10 ? "0"+ to_string(d2) : to_string(d2) ;
 
-    if( (y != y2 || m != m2 || d != d2))
+    if(! ( (y == y2 && y== 2000 ) && (m == m2 && m ==1 ) && (d == d2  && d==1)))
     {
         strtime.append(" date BETWEEN ");
         strtime.append(" '" + sy1 + "-"+ sm1 +"-"+ sd1 +"' ");
         strtime.append(" AND '" + sy2 + "-"+ sm2 +"-"+ sd2+"' ");
     }
+//    cout << strtime << endl;
+//    cout << "y = "+ to_string(y)  + "m = " + to_string(m) + "d = " + to_string(d) << endl;
+//    cout << "y2 = "+ to_string(y2)  + "m2 = " + to_string(m2) + "d2 = " + to_string(d2) << endl;
+
     if(count)
         str.append(" ) ");
 
@@ -472,7 +476,7 @@ void caCharts(int x,Ui::MainWindow *ui)
     sm2 = m2<10 ? "0"+ to_string(m2) : to_string(m2) ;
     sd2 = d2<10 ? "0"+ to_string(d2) : to_string(d2) ;
 
-    if( (y != y2 || m != m2 || d != d2))
+    if(! ( (y == y2 && y== 2000 ) && (m == m2 && m ==1 ) && (d == d2  && d==1)))
     {
         strtime.append(" date BETWEEN ");
         strtime.append(" '" + sy1 + "-"+ sm1 +"-"+ sd1 +"' ");
@@ -677,7 +681,7 @@ void percentchart(int x,Ui::MainWindow *ui)
     sm2 = m2<10 ? "0"+ to_string(m2) : to_string(m2) ;
     sd2 = d2<10 ? "0"+ to_string(d2) : to_string(d2) ;
 
-    if( (y != y2 || m != m2 || d != d2))
+    if(! ( (y == y2 && y== 2000 ) && (m == m2 && m ==1 ) && (d == d2  && d==1)))
     {
         strtime.append(" date BETWEEN ");
         strtime.append(" '" + sy1 + "-"+ sm1 +"-"+ sd1 +"' ");

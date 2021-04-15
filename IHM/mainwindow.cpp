@@ -69,6 +69,11 @@ void MainWindow::on_pushButton_pressed()
 
     QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_2.wav");
 
+
+    on_pushButton_6_pressed();
+    on_pushButton_7_pressed();
+    on_pushButton_8_pressed();
+
     refreshCharts(1, ui);
     refreshCharts(2, ui);
     refreshCharts(3, ui);
@@ -86,26 +91,6 @@ void MainWindow::on_pushButton_2_pressed()
     ui->pushButton_2->hide();
 
 
-//    ui->textEdit->show();
-//    ui->graphicsView_pret->show();
-//    ui->graphicsView->hide();
-//    ui->graphicsView_2->hide();
-//    ui->graphicsView_3->hide();
-//    ui->pushButton_retour->show();
-//    ui->pushButton_2->hide();
-//    ui->pushButton_3->hide();
-//    ui->pushButton_4->hide();
-//    ui->pushButton_5->hide();
-//    ui->pushButton_6->hide();
-//    ui->pushButton_7->hide();
-//    ui->pushButton_8->hide();
-//    ui->pushButton_9->hide();
-//    ui->pushButton_10->hide();
-//    ui->pushButton_11->hide();
-//    ui->lineEdit_pret->show();
-//    ui->lineEdit->hide();
-//    ui->lineEdit_2->hide();
-//    ui->lineEdit_3->hide();
     return;
 }
 
@@ -113,28 +98,6 @@ void MainWindow::on_pushButton_retour_pressed()
 {
 
     QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_2.wav");
-//    ui->textEdit->hide();
-//    ui->graphicsView_pret->hide();
-//    ui->graphicsView->show();
-//    ui->graphicsView_2->show();
-//    ui->graphicsView_3->show();
-//    ui->pushButton_2->show();
-//    ui->pushButton_3->show();
-//    ui->pushButton_4->show();
-//    ui->pushButton_5->show();
-//    ui->pushButton_9->show();
-//    ui->pushButton_10->show();
-//    ui->pushButton_11->show();
-//    refreshCharts(1, ui);
-//    refreshCharts(2, ui);
-//    refreshCharts(3, ui);
-//    ui->pushButton_retour->hide();
-//    ui->lineEdit_pret->hide();
-//    ui->lineEdit->show();
-//    ui->lineEdit_2->show();
-//    ui->lineEdit_3->show();
-//    //refresh chart
-
 
     ui->widget->show();
     ui->widget_2->hide();
@@ -142,6 +105,7 @@ void MainWindow::on_pushButton_retour_pressed()
 
     return;
 }
+
 void MainWindow::on_pushButton_3_pressed()
 {
     QSound::play(QCoreApplication::applicationDirPath() + "/../IHM/mysounds/button_1.wav");

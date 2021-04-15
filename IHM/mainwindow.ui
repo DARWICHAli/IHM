@@ -187,19 +187,19 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QTextEdit" name="textEdit">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QtCharts::QChartView" name="graphicsView_pret">
          <property name="enabled">
           <bool>true</bool>
          </property>
          <property name="interactive">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTextEdit" name="textEdit">
+         <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
@@ -231,29 +231,6 @@
         </spacer>
        </item>
       </layout>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="lineEdit_title">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="inputMethodHints">
-       <set>Qt::ImhNone</set>
-      </property>
-      <property name="text">
-       <string> La Banque</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0" colspan="3">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>info_on_prêt</string>
-      </property>
      </widget>
     </item>
     <item row="2" column="0" colspan="3">
@@ -346,6 +323,29 @@
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_title">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="text">
+       <string> La Banque</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="3">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>info_on_prêt</string>
+      </property>
      </widget>
     </item>
    </layout>
