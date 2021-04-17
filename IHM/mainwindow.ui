@@ -23,9 +23,16 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(136, 138, 133);
+background-color: rgb(186, 189, 182);</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout_5">
     <item row="3" column="0" colspan="3">
      <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 243, 243);</string>
+      </property>
       <layout class="QGridLayout" name="gridLayout">
        <property name="leftMargin">
         <number>0</number>
@@ -167,6 +174,9 @@
     </item>
     <item row="4" column="0" colspan="3">
      <widget class="QWidget" name="widget_2" native="true">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QGridLayout" name="gridLayout_4">
        <property name="leftMargin">
         <number>0</number>
@@ -182,6 +192,9 @@
        </property>
        <item row="3" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton_retour">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
+         </property>
          <property name="text">
           <string>retour_sur_main</string>
          </property>
@@ -191,6 +204,9 @@
         <widget class="QtCharts::QChartView" name="graphicsView_pret">
          <property name="enabled">
           <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
          </property>
          <property name="interactive">
           <bool>false</bool>
@@ -202,12 +218,18 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
+         </property>
         </widget>
        </item>
        <item row="0" column="0" colspan="2">
         <widget class="QLineEdit" name="lineEdit_pret">
          <property name="enabled">
           <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
          </property>
          <property name="text">
           <string>PRÊT</string>
@@ -235,12 +257,18 @@
     </item>
     <item row="2" column="0" colspan="3">
      <widget class="QGroupBox" name="groupBox_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 243, 243);</string>
+      </property>
       <property name="title">
        <string>modif_chart</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="1">
         <widget class="QGroupBox" name="groupBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
+         </property>
          <property name="title">
           <string>modif_date</string>
          </property>
@@ -271,6 +299,9 @@
        </item>
        <item row="1" column="2">
         <widget class="QGroupBox" name="groupBox_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(243, 243, 243);</string>
+         </property>
          <property name="title">
           <string>choisir_agneces</string>
          </property>
@@ -330,6 +361,9 @@
       <property name="enabled">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 243, 243);</string>
+      </property>
       <property name="inputMethodHints">
        <set>Qt::ImhNone</set>
       </property>
@@ -343,6 +377,9 @@
     </item>
     <item row="5" column="0" colspan="3">
      <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(243, 243, 243);</string>
+      </property>
       <property name="text">
        <string>info_on_prêt</string>
       </property>
