@@ -196,7 +196,7 @@ background-color: rgb(186, 189, 182);</string>
           <string notr="true">background-color: rgb(243, 243, 243);</string>
          </property>
          <property name="text">
-          <string>retour_sur_main</string>
+          <string>retour sur main</string>
          </property>
         </widget>
        </item>
@@ -261,7 +261,7 @@ background-color: rgb(186, 189, 182);</string>
        <string notr="true">background-color: rgb(243, 243, 243);</string>
       </property>
       <property name="title">
-       <string>modif_chart</string>
+       <string>modif chart</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="1">
@@ -270,7 +270,7 @@ background-color: rgb(186, 189, 182);</string>
           <string notr="true">background-color: rgb(243, 243, 243);</string>
          </property>
          <property name="title">
-          <string>modif_date</string>
+          <string>modif date</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_15">
           <item>
@@ -303,7 +303,7 @@ background-color: rgb(186, 189, 182);</string>
           <string notr="true">background-color: rgb(243, 243, 243);</string>
          </property>
          <property name="title">
-          <string>choisir_agneces</string>
+          <string>choisir agences</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="3">
@@ -361,6 +361,13 @@ background-color: rgb(186, 189, 182);</string>
       <property name="enabled">
        <bool>false</bool>
       </property>
+      <property name="font">
+       <font>
+        <family>Nimbus Mono L</family>
+        <pointsize>18</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(243, 243, 243);</string>
       </property>
@@ -381,7 +388,7 @@ background-color: rgb(186, 189, 182);</string>
        <string notr="true">background-color: rgb(243, 243, 243);</string>
       </property>
       <property name="text">
-       <string>info_on_prêt</string>
+       <string>info prêt</string>
       </property>
      </widget>
     </item>

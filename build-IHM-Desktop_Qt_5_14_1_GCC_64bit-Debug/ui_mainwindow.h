@@ -308,6 +308,11 @@ public:
         lineEdit_title = new QLineEdit(centralwidget);
         lineEdit_title->setObjectName(QString::fromUtf8("lineEdit_title"));
         lineEdit_title->setEnabled(false);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Nimbus Mono L"));
+        font.setPointSize(18);
+        font.setItalic(true);
+        lineEdit_title->setFont(font);
         lineEdit_title->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 243, 243);"));
         lineEdit_title->setInputMethodHints(Qt::ImhNone);
         lineEdit_title->setAlignment(Qt::AlignCenter);
@@ -345,21 +350,21 @@ public:
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "percent", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWindow", "bars", nullptr));
         pushButton_11->setText(QCoreApplication::translate("MainWindow", "CA", nullptr));
-        pushButton_retour->setText(QCoreApplication::translate("MainWindow", "retour_sur_main", nullptr));
+        pushButton_retour->setText(QCoreApplication::translate("MainWindow", "retour sur main", nullptr));
         lineEdit_pret->setText(QCoreApplication::translate("MainWindow", "PR\303\212T", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "modif_chart", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("MainWindow", "modif_date", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "modif chart", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "modif date", nullptr));
         dateTimeEdit->setDisplayFormat(QCoreApplication::translate("MainWindow", "dd/MM/yyyy", nullptr));
         dateTimeEdit_2->setDisplayFormat(QCoreApplication::translate("MainWindow", "dd/MM/yyyy", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "ok", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "choisir_agneces", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "choisir agences", nullptr));
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "agence 4", nullptr));
         checkBox_2->setText(QCoreApplication::translate("MainWindow", "agence 2", nullptr));
         checkBox_1->setText(QCoreApplication::translate("MainWindow", "agence 1", nullptr));
         checkBox_5->setText(QCoreApplication::translate("MainWindow", "agence 5", nullptr));
         checkBox_3->setText(QCoreApplication::translate("MainWindow", "agence 3", nullptr));
         lineEdit_title->setText(QCoreApplication::translate("MainWindow", " La Banque", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "info_on_pr\303\252t", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "info pr\303\252t", nullptr));
     } // retranslateUi
 
 };

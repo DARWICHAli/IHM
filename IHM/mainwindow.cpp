@@ -8,14 +8,9 @@
 #include <iostream>
 
 #include <QSound>
-//#include <QCoreApplication>
-
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
-
-
-//#include <QString>
 
 
 using namespace QtCharts;
@@ -34,13 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->widget_2->hide();
 
-//    ui->graphicsView_pret->hide();
-//    ui->pushButton_retour->hide();
     ui->pushButton_6->hide();
     ui->pushButton_7->hide();
     ui->pushButton_8->hide();
-//    ui->lineEdit_pret->hide();
-//    ui->textEdit->hide();
 
     QObject::connect(ui->pushButton_retour, SIGNAL(released()), this, SLOT(on_pushButton_retour_pressed()));
     QObject::connect(ui->pushButton, SIGNAL(released()), this, SLOT(on_pushButton_pressed()));
